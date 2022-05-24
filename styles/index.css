@@ -1,0 +1,220 @@
+/*** FONTS ***/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);
+/*** VARIABLES ***/
+/* Colors */
+/*** EXTEND ***/
+/* box-shadow */
+.container > .user-button, .container > .user-button::before {
+  -webkit-box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+          box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fafafa;
+  color: #1d1f20;
+  font-family: 'Raleway', sans-serif;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem;
+}
+
+/* users list container */
+.container {
+  counter-reset: gradient-counter;
+  list-style: none;
+  padding-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 40px auto;
+}
+
+.container > .user-button {
+  background: white;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  max-width: 700px;
+  margin-left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  height: 55px;
+  counter-increment: gradient-counter;
+  margin-top: 1rem;
+  padding: 1rem 1rem 1rem 3rem;
+  position: relative;
+}
+
+.container > .user-button:hover {
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+
+.container > .user-button::before, .container > .user-button::after {
+  background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+  border-radius: 1rem 1rem 0 1rem;
+  content: '';
+  height: 3rem;
+  left: -1rem;
+  overflow: hidden;
+  position: absolute;
+  top: -1rem;
+  width: 3rem;
+}
+
+.container > .user-button::before {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  content: counter(gradient-counter);
+  color: #1d1f20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: 900 1.5em/1 'Montserrat';
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0.125em 0.25em;
+  z-index: 1;
+}
+
+.container > .user-button:nth-child(10n+1):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
+}
+
+.container > .user-button:nth-child(10n+2):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%);
+}
+
+.container > .user-button:nth-child(10n+3):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%);
+}
+
+.container > .user-button:nth-child(10n+4):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%);
+}
+
+.container > .user-button:nth-child(10n+5):before {
+  background: linear-gradient(135deg, #a2ed56 0%, #fddc32 100%);
+}
+
+.container > .user-button:nth-child(10n+6):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%);
+}
+
+.container > .user-button:nth-child(10n+7):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%);
+}
+
+.container > .user-button:nth-child(10n+8):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%);
+}
+
+.container > .user-button:nth-child(10n+9):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
+}
+
+.container > .user-button:nth-child(10n+10):before {
+  background: linear-gradient(135deg, rgba(162, 237, 86, 0) 0%, rgba(253, 220, 50, 0) 100%);
+}
+
+.container > .user-button + button {
+  margin-top: 2rem;
+}
+
+.heading {
+  color: #FF6F61;
+}
+
+.heading:hover {
+  cursor: crosshair;
+}
+
+/* user details styles */
+.user-details dt {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FF6F61;
+}
+
+.user-details dd {
+  font-size: 18px;
+  color: #0072B5;
+  margin-bottom: 20px;
+}
+
+.user-details dd a {
+  color: red;
+  text-decoration: none;
+}
+
+.user-details .posts-button {
+  width: 125px;
+  height: 50px;
+  border: 2px solid #FF6F61;
+  border-radius: 6px;
+  font-family: Raleway, sans-serif;
+  color: #0072B5;
+  margin-right: 20px;
+}
+
+.user-details .posts-button:hover {
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+.home-button {
+  width: 125px;
+  height: 50px;
+  border: 2px solid #FF6F61;
+  border-radius: 6px;
+  font-family: Raleway, sans-serif;
+  color: #0072B5;
+}
+
+.home-button:hover {
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+/* users posts styles */
+.container-inner {
+  margin-bottom: 20px;
+}
+
+.container-inner .post .post-title {
+  color: #FF6F61;
+}
+
+.container-inner .post .post-body {
+  color: #0072B5;
+}
+/*# sourceMappingURL=index.css.map */

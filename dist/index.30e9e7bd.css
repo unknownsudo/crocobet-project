@@ -1,0 +1,193 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i";
+.container > .user-button:before, .container > .user-button {
+  box-shadow: .25rem .25rem .6rem #0000000d, 0 .5rem 1.125rem #4b00000d;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #1d1f20;
+  background-color: #fafafa;
+  font-family: Raleway, sans-serif;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  display: block;
+}
+
+.container {
+  counter-reset: gradient-counter;
+  flex-direction: column;
+  margin: 40px auto;
+  padding-left: 1rem;
+  list-style: none;
+  display: flex;
+}
+
+.container > .user-button {
+  max-width: 700px;
+  height: 55px;
+  counter-increment: gradient-counter;
+  background: #fff;
+  border: none;
+  border-radius: 0 .5rem .5rem;
+  margin-top: 1rem;
+  margin-left: 50%;
+  padding: 1rem 1rem 1rem 3rem;
+  font-family: Raleway, sans-serif;
+  position: relative;
+  transform: translate(-50%);
+}
+
+.container > .user-button:hover {
+  cursor: pointer;
+  font-size: 16px;
+  transition: all .2s ease-in;
+}
+
+.container > .user-button:before, .container > .user-button:after {
+  content: "";
+  height: 3rem;
+  width: 3rem;
+  background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+  border-radius: 1rem 1rem 0;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  overflow: hidden;
+}
+
+.container > .user-button:before {
+  content: counter(gradient-counter);
+  color: #1d1f20;
+  z-index: 1;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: .125em .25em;
+  font: 900 1.5em / 1 Montserrat;
+  display: flex;
+}
+
+.container > .user-button:nth-child(10n+1):before {
+  background: linear-gradient(135deg, #a2ed5633 0%, #fddc3233 100%);
+}
+
+.container > .user-button:nth-child(10n+2):before {
+  background: linear-gradient(135deg, #a2ed5666 0%, #fddc3266 100%);
+}
+
+.container > .user-button:nth-child(10n+3):before {
+  background: linear-gradient(135deg, #a2ed5699 0%, #fddc3299 100%);
+}
+
+.container > .user-button:nth-child(10n+4):before {
+  background: linear-gradient(135deg, #a2ed56cc 0%, #fddc32cc 100%);
+}
+
+.container > .user-button:nth-child(10n+5):before {
+  background: linear-gradient(135deg, #a2ed56 0%, #fddc32 100%);
+}
+
+.container > .user-button:nth-child(10n+6):before {
+  background: linear-gradient(135deg, #a2ed56cc 0%, #fddc32cc 100%);
+}
+
+.container > .user-button:nth-child(10n+7):before {
+  background: linear-gradient(135deg, #a2ed5699 0%, #fddc3299 100%);
+}
+
+.container > .user-button:nth-child(10n+8):before {
+  background: linear-gradient(135deg, #a2ed5666 0%, #fddc3266 100%);
+}
+
+.container > .user-button:nth-child(10n+9):before {
+  background: linear-gradient(135deg, #a2ed5633 0%, #fddc3233 100%);
+}
+
+.container > .user-button:nth-child(10n+10):before {
+  background: linear-gradient(135deg, #a2ed5600 0%, #fddc3200 100%);
+}
+
+.container > .user-button + button {
+  margin-top: 2rem;
+}
+
+.heading {
+  color: #ff6f61;
+}
+
+.heading:hover {
+  cursor: crosshair;
+}
+
+.user-details dt {
+  color: #ff6f61;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.user-details dd {
+  color: #0072b5;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.user-details dd a {
+  color: red;
+  text-decoration: none;
+}
+
+.user-details .posts-button {
+  width: 125px;
+  height: 50px;
+  color: #0072b5;
+  border: 2px solid #ff6f61;
+  border-radius: 6px;
+  margin-right: 20px;
+  font-family: Raleway, sans-serif;
+}
+
+.user-details .posts-button:hover {
+  cursor: pointer;
+  font-size: 16px;
+  transition: all .3s ease-in-out;
+}
+
+.home-button {
+  width: 125px;
+  height: 50px;
+  color: #0072b5;
+  border: 2px solid #ff6f61;
+  border-radius: 6px;
+  font-family: Raleway, sans-serif;
+}
+
+.home-button:hover {
+  cursor: pointer;
+  font-size: 16px;
+  transition: all .3s ease-in-out;
+}
+
+.container-inner {
+  margin-bottom: 20px;
+}
+
+.container-inner .post .post-title {
+  color: #ff6f61;
+}
+
+.container-inner .post .post-body {
+  color: #0072b5;
+}
+
+/*# sourceMappingURL=index.30e9e7bd.css.map */

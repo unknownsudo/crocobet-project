@@ -1,0 +1,179 @@
+/*** FONTS ***/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);
+
+
+
+/*** VARIABLES ***/
+/* Colors */
+$black: #1d1f20;
+$blue: #83e4e2;
+$green: #a2ed56;
+$yellow: #fddc32;
+$white: #fafafa;
+$orange: #FF6F61;
+$niceBlue: #0072B5; 
+
+/*** EXTEND ***/
+/* box-shadow */
+%boxshadow {
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $white;
+  color: $black;
+  font-family: 'Raleway', sans-serif;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem;
+}
+
+/* users list container */
+.container { 
+  counter-reset: gradient-counter;
+  list-style: none;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  > .user-button {
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    max-width: 700px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    height: 55px;
+    &:hover {
+      cursor: pointer;
+      font-size: 16px;
+     transition: ease-in 0.2s;
+    }
+    @extend %boxshadow;
+    counter-increment: gradient-counter;
+    margin-top: 1rem;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+    &::before,
+    &::after {
+      background: linear-gradient(135deg, $blue 0%,$green 100%);
+      border-radius: 1rem 1rem 0 1rem;
+      content: '';
+      height: 3rem;
+      left: -1rem;
+      overflow: hidden;
+      position: absolute;
+      top: -1rem;
+      width: 3rem;
+    }
+    &::before {
+      align-items: flex-end;
+      @extend %boxshadow;
+      content: counter(gradient-counter);
+      color: $black;
+      display: flex;
+      font: 900 1.5em/1 'Montserrat';
+      justify-content: flex-end;
+      padding: 0.125em 0.25em;
+      z-index: 1;
+    }
+    @for $i from 1 through 5 {
+      &:nth-child(10n+#{$i}):before {
+        background: linear-gradient(135deg, rgba($green, $i * 0.2) 0%,rgba($yellow, $i * 0.2) 100%);
+      }
+    }
+    @for $i from 6 through 10 {
+      &:nth-child(10n+#{$i}):before {
+        background: linear-gradient(135deg, rgba($green, 1 - (($i - 5) * 0.2)) 0%,rgba($yellow, 1 - (($i - 5) * 0.2)) 100%);
+      }
+    }
+    + button {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.heading {
+  color: $orange;
+  &:hover {
+    cursor:crosshair;
+  }
+}
+
+/* user details styles */
+.user-details { 
+  dt {
+    font-size: 20px;
+    font-weight: 600;
+    color: $orange;
+  }
+  
+  dd {
+    font-size: 18px;
+    color: $niceBlue;
+    margin-bottom: 20px;
+    a {
+      color: red;
+      text-decoration: none;
+    }
+  }
+  .posts-button {
+    width: 125px;
+    height: 50px;
+    border: 2px solid $orange;
+    border-radius: 6px;
+    font-family: Raleway, sans-serif;
+    color: $niceBlue;
+    margin-right: 20px;
+    &:hover {
+      cursor: pointer;
+      font-size: 16px;
+      transition: ease-in-out 0.3s;
+    }
+  }
+}
+
+.home-button {
+  width: 125px;
+  height: 50px;
+  border: 2px solid $orange;
+  border-radius: 6px;
+  font-family: Raleway, sans-serif;
+  color: $niceBlue;
+  &:hover {
+    cursor: pointer;
+    font-size: 16px;
+    transition: ease-in-out 0.3s;
+  }
+}
+
+/* users posts styles */
+.container-inner {
+  margin-bottom: 20px; 
+  .post {
+    .post-title {
+      color: $orange;
+    }
+    .post-body {
+      color: $niceBlue;
+    }
+  }
+}
